@@ -73,9 +73,9 @@ export const fetchMovies = () => {
 };
 
 /**
- * Clears all data.
+ * Resets the data.
  */
-export const clearData = () => {
+export const resetData = () => {
   movies.value = {};
   searchInput.value = "";
 };

@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { clearData, fetchMovies, searchInput } from "@/composables/useMovies";
+import { resetData, fetchMovies, searchInput } from "@/composables/useMovies";
 
 import IconSearch from "@/components/icons/IconSearch.vue";
 import IconX from "@/components/icons/IconX.vue";
 
 const clearInputHandler = () => {
-  clearData();
+  resetData();
 };
 
 const searchHandler = () => {
