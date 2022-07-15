@@ -1,5 +1,10 @@
 <script setup lang="ts">
-import { error, isMoviesLoading, movies } from "@/composables/useMovies";
+import {
+  error,
+  isMoviesLoading,
+  movies,
+  searchInput,
+} from "@/composables/useMovies";
 
 import DashboardItem from "./DashboardItem.vue";
 </script>
@@ -11,10 +16,12 @@ import DashboardItem from "./DashboardItem.vue";
 
   <p
     v-else-if="
-      !isMoviesLoading && (!movies?.Search || movies?.Search.length === 0)
+      !isMoviesLoading &&
+      (!movies?.Search || movies?.Search.length === 0) &&
+      searchInput
     "
   >
-    Search for a movie above.
+    No movies found.
   </p>
 
   <div v-else>

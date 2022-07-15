@@ -7,9 +7,7 @@ import DashboardSearch from "./DashboardSearch.vue";
 <template>
   <div class="dashboard">
     <DashboardSearch />
-
     <DashboardList />
-
     <DashboardPagination />
   </div>
 </template>
