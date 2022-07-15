@@ -3,9 +3,9 @@ import { movie, isMovieLoading } from "@/composables/useMovies";
 
 import MovieFallback from "./MovieFallback.vue";
 import MovieHeader from "./MovieHeader.vue";
-import MovieInformation from "./MovieInformation.vue";
+import MovieInfo from "./MovieInfo.vue";
 import MovieLoading from "./MovieLoading.vue";
-import MovieSypnosis from "./MovieSypnosis.vue";
+import MovieSynopsis from "./MovieSynopsis.vue";
 </script>
 
 <template>
@@ -18,8 +18,8 @@ import MovieSypnosis from "./MovieSypnosis.vue";
       <MovieHeader :movie="movie" />
 
       <div class="movie__content">
-        <MovieInformation :movie="movie" />
-        <MovieSypnosis :movie="movie" />
+        <MovieInfo :movie="movie" />
+        <MovieSynopsis :movie="movie" />
       </div>
     </div>
   </div>

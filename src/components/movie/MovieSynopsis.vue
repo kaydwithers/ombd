@@ -7,14 +7,14 @@ defineProps<{
 </script>
 
 <template>
-  <div class="movie__sypnosis">
+  <div class="movie__synopsis">
     <h4><strong>Synopsis</strong></h4>
     <p>{{ movie?.Plot }}</p>
   </div>
 </template>
 
 <style scoped>
-.movie__sypnosis {
+.movie__synopsis {
   flex: 1 1 0%;
   margin-left: 2.5rem;
 }
