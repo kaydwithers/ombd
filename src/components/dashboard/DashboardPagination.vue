@@ -19,10 +19,7 @@ const increment = (subtract = false) => {
 </script>
 
 <template>
-  <div
-    v-if="movies?.Search && movies?.Search.length"
-    class="dashboard-pagination"
-  >
+  <div v-if="totalPages > 1" class="dashboard-pagination">
     <button class="arrow" :disabled="pageIndex <= 1" @click="increment(true)">
       ◂
     </button>
