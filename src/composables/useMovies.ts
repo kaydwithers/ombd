@@ -24,7 +24,7 @@ export const fetchMovie = (imdbID: string) => {
   isMovieLoading.value = true;
   error.value = null;
 
-  fetch(`${API_URL}?apikey=3e13553d&i=${imdbID}`)
+  fetch(`${API_URL}?apikey=${import.meta.env.VITE_API_KEY}&i=${imdbID}`)
     .then((response) => {
       if (response.ok) {
         return response.json();
@@ -44,7 +44,6 @@ export const fetchMovie = (imdbID: string) => {
 /**
  * Returns a movies API response.
  *
- * @param {string} param - The API url param.
  * @returns {promise}
  */
 export const fetchMovies = () => {
@@ -52,7 +51,9 @@ export const fetchMovies = () => {
   error.value = null;
 
   fetch(
-    `${API_URL}?apikey=3e13553d&type=movie&s=${searchInput.value}&page=${pageIndex.value}`
+    `${API_URL}?apikey=${import.meta.env.VITE_API_KEY}&type=movie&s=${
+      searchInput.value
+    }&page=${pageIndex.value}`
   )
     .then((response) => {
       if (response.ok) {
@@ -71,7 +72,10 @@ export const fetchMovies = () => {
     });
 };
 
-export const clearSearch = () => {
+/**
+ * Clears all data.
+ */
+export const clearData = () => {
   movies.value = {};
   searchInput.value = "";
 };
