@@ -7,7 +7,7 @@ const totalPages = computed(() => {
   return Math.round(Number(movies.value?.totalResults) / 10);
 });
 
-const increment = (subtract = false) => {
+const incrementHandler = (subtract = false) => {
   if (subtract) {
     pageIndex.value -= 1;
   } else {
@@ -20,7 +20,11 @@ const increment = (subtract = false) => {
 
 <template>
   <div v-if="totalPages > 1" class="dashboard-pagination">
-    <button class="arrow" :disabled="pageIndex <= 1" @click="increment(true)">
+    <button
+      class="arrow"
+      :disabled="pageIndex <= 1"
+      @click="incrementHandler(true)"
+    >
       ◂
     </button>
 
@@ -29,7 +33,7 @@ const increment = (subtract = false) => {
     <button
       class="arrow"
       :disabled="pageIndex === totalPages"
-      @click="increment()"
+      @click="incrementHandler()"
     >
       ▸
     </button>
