@@ -62,8 +62,10 @@ export const fetchMovies = () => {
     })
     .then((data) => {
       isMoviesLoading.value = false;
+      if (data.Error) {
+        error.value = data.Error;
+      }
       movies.value = data;
-      console.log(data.Search);
     })
     .catch((error) => {
       console.error(`Failed getCharacters(): ${error}`);
