@@ -1,0 +1,40 @@
+<script setup lang="ts">
+import { movie, isMovieLoading } from "@/composables/useMovies";
+
+import MovieFallback from "./MovieFallback.vue";
+import MovieHeader from "./MovieHeader.vue";
+import MovieInformation from "./MovieInformation.vue";
+import MovieLoading from "./MovieLoading.vue";
+import MovieSypnosis from "./MovieSypnosis.vue";
+</script>
+
+<template>
+  <div class="movie">
+    <MovieLoading v-if="isMovieLoading" />
+
+    <MovieFallback v-else-if="!isMovieLoading && !movie" />
+
+    <div v-else>
+      <MovieHeader :movie="movie" />
+
+      <div class="movie__content">
+        <MovieInformation :movie="movie" />
+        <MovieSypnosis :movie="movie" />
+      </div>
+    </div>
+  </div>
+</template>
+
+<style scoped>
+.movie {
+  flex: 1 1 0%;
+}
+
+.movie__content {
+  display: flex;
+  padding-bottom: 10rem;
+  padding-left: 7.5rem;
+  padding-right: 7.5rem;
+  padding-top: 2.5rem;
+}
+</style>
