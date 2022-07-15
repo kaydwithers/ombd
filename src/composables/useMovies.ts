@@ -35,7 +35,7 @@ export const fetchMovie = (imdbID: string) => {
       movie.value = data;
     })
     .catch((error) => {
-      console.error(`Failed getCharacter(): ${error}`);
+      console.error(`Failed fetchMovie(): ${error}`);
       isMovieLoading.value = false;
       error.value = error;
     });
@@ -68,7 +68,7 @@ export const fetchMovies = () => {
       movies.value = data;
     })
     .catch((error) => {
-      console.error(`Failed getCharacters(): ${error}`);
+      console.error(`Failed fetchMovies(): ${error}`);
       isMoviesLoading.value = false;
       error.value = error;
     });
