@@ -18,6 +18,12 @@ import DashboardSearch from "./DashboardSearch.vue";
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  width: 25vw;
+  width: 70vw;
+}
+
+@media (min-width: 1024px) {
+  .dashboard {
+    width: 25vw;
+  }
 }
 </style>

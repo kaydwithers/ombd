@@ -10,6 +10,7 @@ export interface MovieInterface {
 }
 
 export interface MoviesInterface {
+  Response: string;
   Search: Array<MovieInterface>;
   totalResults: string;
 }

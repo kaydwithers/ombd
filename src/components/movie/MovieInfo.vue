@@ -13,7 +13,11 @@ const getFormattedActors = () => {
 
 <template>
   <div class="movie__information">
-    <img :src="movie?.Poster" :alt="movie?.Title" />
+    <img
+      :src="movie?.Poster"
+      :alt="movie?.Title"
+      onerror="this.style.display='none'"
+    />
 
     <div class="summary">
       <div class="language">
@@ -58,10 +62,10 @@ img {
 .duration,
 .language,
 .cast {
-  padding-bottom: 0.25rem;
-  padding-left: 0.25rem;
-  padding-right: 0.25rem;
-  padding-top: 0.25rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.5rem;
 }
 
 .duration,

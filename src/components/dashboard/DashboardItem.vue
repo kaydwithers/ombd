@@ -18,7 +18,13 @@ const clickHandler = (imdbID: string) => {
     :class="{ 'is-active': item.imdbID === movie?.imdbID }"
   >
     <button @click="clickHandler(item.imdbID)">
-      <img :src="item.Poster" :alt="item.Title" />
+      <div class="dashboard-item__image">
+        <img
+          :src="item.Poster"
+          :alt="item.Title"
+          onerror="this.style.display='none'"
+        />
+      </div>
 
       <div class="content">
         <h4>
@@ -56,11 +62,19 @@ button {
   box-shadow: inset 4px 1px 0px var(--accent-500);
 }
 
-img {
+.dashboard-item__image {
+  background-color: var(--neutral-200);
   height: 3rem;
   margin-right: 0.875rem;
   object-fit: cover;
   width: 3rem;
+}
+
+img {
+  height: 100%;
+  margin-right: 0.875rem;
+  object-fit: cover;
+  width: 100%;
 }
 
 .content {

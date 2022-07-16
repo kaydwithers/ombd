@@ -62,10 +62,12 @@ export const fetchMovies = () => {
     })
     .then((data) => {
       isMoviesLoading.value = false;
-      if (data.Error) {
+
+      if (data.Response === "True") {
+        movies.value = data;
+      } else if (data.Response === "False" && data.Error) {
         error.value = data.Error;
       }
-      movies.value = data;
     })
     .catch((error) => {
       console.error(`Failed fetchMovies(): ${error}`);
@@ -78,6 +80,7 @@ export const fetchMovies = () => {
  * Resets the data.
  */
 export const resetData = () => {
+  error.value = null;
   movies.value = {};
   searchInput.value = "";
 };
