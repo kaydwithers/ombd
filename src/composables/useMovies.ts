@@ -22,7 +22,6 @@ export const searchInput = ref("");
  */
 export const fetchMovie = (imdbID: string) => {
   isMovieLoading.value = true;
-  error.value = null;
 
   fetch(`${API_URL}?apikey=${import.meta.env.VITE_API_KEY}&i=${imdbID}`)
     .then((response) => {
@@ -32,6 +31,7 @@ export const fetchMovie = (imdbID: string) => {
     })
     .then((data) => {
       isMovieLoading.value = false;
+      error.value = null;
       movie.value = data;
     })
     .catch((error) => {
