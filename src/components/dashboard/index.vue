@@ -5,7 +5,7 @@ import DashboardPagination from "./DashboardPagination.vue";
 </script>
 
 <template>
-  <aside>
+  <aside class="dashboard">
     <DashboardInput />
     <DashboardList />
     <DashboardPagination />
@@ -13,7 +13,7 @@ import DashboardPagination from "./DashboardPagination.vue";
 </template>
 
 <style scoped>
-aside {
+.dashboard {
   box-shadow: 2px 4px 12px 4px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
@@ -22,7 +22,7 @@ aside {
 }
 
 @media (min-width: 1024px) {
-  aside {
+  .dashboard {
     width: 20rem;
   }
 }
