@@ -3,8 +3,8 @@
   font-family: "Lato";
   font-style: normal;
   font-weight: 400;
-  src: url("../fonts/Lato-regular.woff2") format("woff2"),
-    url("../fonts/Lato-regular.woff") format("woff");
+  src: url("/fonts/Lato-regular.woff2") format("woff2"),
+    url("/fonts/Lato-regular.woff") format("woff");
 }
 
 @font-face {
@@ -12,8 +12,8 @@
   font-family: "Lato";
   font-style: normal;
   font-weight: 700;
-  src: url("../fonts/Lato-bold.woff2") format("woff2"),
-    url("../fonts/Lato-bold.woff") format("woff");
+  src: url("/fonts/Lato-bold.woff2") format("woff2"),
+    url("/fonts/Lato-bold.woff") format("woff");
 }
 
 :root {
