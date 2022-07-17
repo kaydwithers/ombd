@@ -10,30 +10,32 @@ import DashboardListItem from "./DashboardListItem.vue";
 </script>
 
 <template>
-  <p v-if="isMoviesLoading">Loading&hellip;</p>
+  <div class="dashboard-list">
+    <p v-if="isMoviesLoading">Loading&hellip;</p>
 
-  <p v-else-if="!isMoviesLoading && error">
-    <span v-if="searchInput">{{ error }}</span>
-  </p>
+    <p v-else-if="!isMoviesLoading && error">
+      <span v-if="searchInput">{{ error }}</span>
+    </p>
 
-  <p
-    v-else-if="
-      !isMoviesLoading &&
-      (!movies || !movies.Search || movies.Search.length === 0) &&
-      searchInput
-    "
-  >
-    No movies found.
-  </p>
+    <p
+      v-else-if="
+        !isMoviesLoading &&
+        (!movies || !movies.Search || movies.Search.length === 0) &&
+        searchInput
+      "
+    >
+      No movies found.
+    </p>
 
-  <div v-else>
-    <ul class="dashboard-list">
-      <DashboardListItem
-        v-for="(item, index) in movies?.Search"
-        :key="index"
-        :item="item"
-      />
-    </ul>
+    <div v-else>
+      <ul class="dashboard-list">
+        <DashboardListItem
+          v-for="(item, index) in movies?.Search"
+          :key="index"
+          :item="item"
+        />
+      </ul>
+    </div>
   </div>
 </template>
 

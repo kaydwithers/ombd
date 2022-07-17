@@ -13,7 +13,7 @@ const getFormattedActors = () => {
 </script>
 
 <template>
-  <div class="movie__information">
+  <div class="movie-info">
     <img
       :src="movie.Poster"
       :alt="movie.Title"
@@ -42,7 +42,7 @@ const getFormattedActors = () => {
 </template>
 
 <style scoped>
-.movie__information {
+.movie-info {
   width: 12rem;
 }
 

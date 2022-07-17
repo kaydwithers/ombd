@@ -1,11 +1,11 @@
 <template>
-  <div class="movie__loading">
+  <div class="movie-loading">
     <p>Loading&hellip;</p>
   </div>
 </template>
 
 <style scoped>
-.movie__loading {
+.movie-loading {
   align-items: center;
   display: flex;
   justify-content: center;

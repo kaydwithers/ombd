@@ -13,12 +13,9 @@ const clickHandler = (imdbID: string) => {
 </script>
 
 <template>
-  <li
-    class="dashboard-item"
-    :class="{ 'is-active': item.imdbID === movie?.imdbID }"
-  >
+  <li :class="{ 'is-active': item.imdbID === movie?.imdbID }">
     <button @click="clickHandler(item.imdbID)">
-      <div class="dashboard-item__image">
+      <div class="image">
         <img
           :src="item.Poster"
           :alt="item.Title"
@@ -37,7 +34,7 @@ const clickHandler = (imdbID: string) => {
 </template>
 
 <style scoped>
-.dashboard-item {
+li {
   border-bottom-color: var(--neutral-400);
   border-bottom-style: solid;
   border-bottom-width: 1px;
@@ -62,7 +59,7 @@ button {
   box-shadow: inset 4px 1px 0px var(--accent-500);
 }
 
-.dashboard-item__image {
+.image {
   background-color: var(--neutral-200);
   height: 3rem;
   margin-right: 0.875rem;
