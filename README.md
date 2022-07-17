@@ -2,6 +2,8 @@
 
 An OMDb API calling Code Challenge.
 
+Add your [OMDb API KEY](https://www.omdbapi.com/apikey.aspx) to the `.env` file.
+
 ## Project Setup
 
 ```sh
@@ -24,10 +26,4 @@ npm run build
 
 ```sh
 npm run test:unit
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
 ```
