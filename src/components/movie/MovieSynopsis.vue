@@ -9,7 +9,7 @@ defineProps<{
 <template>
   <div class="movie__synopsis">
     <h4><strong>Synopsis</strong></h4>
-    <p>{{ movie?.Plot }}</p>
+    <p>{{ movie.Plot }}</p>
   </div>
 </template>
 

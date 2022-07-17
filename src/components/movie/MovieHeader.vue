@@ -9,9 +9,9 @@ defineProps<{
 <template>
   <div class="movie__header">
     <h1>
-      <strong>{{ movie?.Title }}</strong>
+      <strong>{{ movie.Title }}</strong>
     </h1>
-    <h2>{{ movie?.Year }}</h2>
+    <h2>{{ movie.Year }}</h2>
   </div>
 </template>
 

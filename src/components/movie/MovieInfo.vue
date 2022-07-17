@@ -14,20 +14,20 @@ const getFormattedActors = () => {
 <template>
   <div class="movie__information">
     <img
-      :src="movie?.Poster"
-      :alt="movie?.Title"
+      :src="movie.Poster"
+      :alt="movie.Title"
       onerror="this.style.display='none'"
     />
 
     <div class="summary">
       <div class="language">
         <h5><strong>Language</strong></h5>
-        <p>{{ movie?.Language }}</p>
+        <p>{{ movie.Language }}</p>
       </div>
 
       <div class="duration">
         <h5><strong>Duration</strong></h5>
-        <p>{{ movie?.Runtime }}</p>
+        <p>{{ movie.Runtime }}</p>
       </div>
 
       <div class="cast">

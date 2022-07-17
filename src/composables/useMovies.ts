@@ -81,6 +81,6 @@ export const fetchMovies = () => {
  */
 export const resetData = () => {
   error.value = null;
-  movies.value = {};
+  movies.value = { Response: "", totalResults: "", Search: [] };
   searchInput.value = "";
 };
