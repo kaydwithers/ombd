@@ -29,7 +29,7 @@ import MovieSynopsis from "./MovieSynopsis.vue";
 
 <style scoped>
 .movie {
-  flex: 1 1 0%;
+  display: none;
 }
 
 .movie__content {
@@ -38,5 +38,12 @@ import MovieSynopsis from "./MovieSynopsis.vue";
   padding-left: 7.5rem;
   padding-right: 7.5rem;
   padding-top: 2.5rem;
+}
+
+@media (min-width: 1024px) {
+  .movie {
+    display: block;
+    flex: 1 1 0%;
+  }
 }
 </style>

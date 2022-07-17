@@ -25,9 +25,9 @@ import DashboardListItem from "./DashboardListItem.vue";
   </p>
 
   <div v-else>
-    <ul class="dashboard-list">
+    <ul v-if="movies" class="dashboard-list">
       <DashboardListItem
-        v-for="(item, index) in movies?.Search"
+        v-for="(item, index) in movies.Search"
         :key="index"
         :item="item"
       />

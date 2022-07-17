@@ -18,12 +18,12 @@ import DashboardPagination from "./DashboardPagination.vue";
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  width: 70vw;
+  width: 100%;
 }
 
 @media (min-width: 1024px) {
   .dashboard {
-    width: 25vw;
+    width: 20rem;
   }
 }
 </style>

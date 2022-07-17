@@ -8,7 +8,7 @@ const clearInputHandler = () => {
   resetData();
 };
 
-const searchHandler = () => {
+const inputHandler = () => {
   fetchMovies();
 };
 </script>
@@ -16,11 +16,14 @@ const searchHandler = () => {
 <template>
   <div class="dashboard-search">
     <div class="dashboard-search__input">
+      <label for="email" class="sr-only">Search</label>
       <input
         v-model="searchInput"
+        id="search"
+        name="search"
         placeholder="Search here"
         type="text"
-        @input="searchHandler"
+        @input="inputHandler"
       />
 
       <div class="icon">

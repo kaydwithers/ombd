@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { movie } from "@/composables/useMovies";
+
 import type { MovieInterface } from "@/interfaces/movieInterface";
 
 const props = defineProps<{
