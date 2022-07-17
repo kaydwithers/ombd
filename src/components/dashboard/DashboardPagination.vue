@@ -61,4 +61,8 @@ const incrementHandler = (subtract = false) => {
   height: 1.75rem;
   width: 1.75rem;
 }
+
+button:disabled {
+  opacity: 0.5;
+}
 </style>
