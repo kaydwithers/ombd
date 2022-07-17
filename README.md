@@ -2,7 +2,7 @@
 
 An OMDb API calling Code Challenge.
 
-## API KEY
+## API Key
 
 In the `.env` file, replace `YOUR_API_KEY` with a [OMDb API KEY](https://www.omdbapi.com/apikey.aspx).
 
