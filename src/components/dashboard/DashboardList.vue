@@ -12,12 +12,14 @@ import DashboardListItem from "./DashboardListItem.vue";
 <template>
   <p v-if="isMoviesLoading">Loading&hellip;</p>
 
-  <p v-else-if="!isMoviesLoading && error">{{ error }}</p>
+  <p v-else-if="!isMoviesLoading && error">
+    <span v-if="searchInput">{{ error }}</span>
+  </p>
 
   <p
     v-else-if="
       !isMoviesLoading &&
-      (!movies?.Search || movies?.Search.length === 0) &&
+      (!movies || !movies.Search || movies.Search.length === 0) &&
       searchInput
     "
   >
@@ -25,9 +27,9 @@ import DashboardListItem from "./DashboardListItem.vue";
   </p>
 
   <div v-else>
-    <ul v-if="movies" class="dashboard-list">
+    <ul class="dashboard-list">
       <DashboardListItem
-        v-for="(item, index) in movies.Search"
+        v-for="(item, index) in movies?.Search"
         :key="index"
         :item="item"
       />

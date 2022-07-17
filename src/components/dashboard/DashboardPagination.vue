@@ -4,7 +4,7 @@ import { computed } from "vue";
 import { fetchMovies, movies, pageIndex } from "@/composables/useMovies";
 
 const totalPages = computed(() => {
-  return Math.round(Number(movies.value?.totalResults) / 10);
+  return Math.ceil(Number(movies.value?.totalResults) / 10);
 });
 
 const incrementHandler = (subtract = false) => {

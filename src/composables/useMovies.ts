@@ -48,7 +48,6 @@ export const fetchMovie = (imdbID: string) => {
  */
 export const fetchMovies = () => {
   isMoviesLoading.value = true;
-  error.value = null;
 
   fetch(
     `${API_URL}?apikey=${import.meta.env.VITE_API_KEY}&type=movie&s=${
@@ -64,6 +63,7 @@ export const fetchMovies = () => {
       isMoviesLoading.value = false;
 
       if (data.Response === "True") {
+        error.value = null;
         movies.value = data;
       } else if (data.Response === "False" && data.Error) {
         error.value = data.Error;
