@@ -1,12 +1,12 @@
 <script setup lang="ts">
+import DashboardInput from "./DashboardInput.vue";
 import DashboardList from "./DashboardList.vue";
 import DashboardPagination from "./DashboardPagination.vue";
-import DashboardSearch from "./DashboardSearch.vue";
 </script>
 
 <template>
   <div class="dashboard">
-    <DashboardSearch />
+    <DashboardInput />
     <DashboardList />
     <DashboardPagination />
   </div>
