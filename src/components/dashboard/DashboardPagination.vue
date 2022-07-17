@@ -23,7 +23,7 @@ const incrementHandler = (subtract = false) => {
 </script>
 
 <template>
-  <section v-if="totalPages > 1">
+  <div v-if="totalPages > 1" class="dashboard-pagination">
     <button :disabled="pageIndex <= 1" @click="incrementHandler(true)">
       ◂
     </button>
@@ -33,11 +33,11 @@ const incrementHandler = (subtract = false) => {
     <button :disabled="pageIndex === totalPages" @click="incrementHandler()">
       ▸
     </button>
-  </section>
+  </div>
 </template>
 
 <style scoped>
-section {
+.dashboard-pagination {
   align-items: center;
   display: flex;
   justify-content: space-between;

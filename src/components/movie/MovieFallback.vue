@@ -1,13 +1,13 @@
 <template>
-  <section>
+  <div class="movie-fallback">
     <h1>
       <strong>Please select a title from the sidebar</strong>
     </h1>
-  </section>
+  </div>
 </template>
 
 <style scoped>
-section {
+.movie-fallback {
   align-items: center;
   display: flex;
   justify-content: center;
