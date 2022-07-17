@@ -6,7 +6,7 @@ import {
   searchInput,
 } from "@/composables/useMovies";
 
-import DashboardItem from "./DashboardItem.vue";
+import DashboardListItem from "./DashboardListItem.vue";
 </script>
 
 <template>
@@ -26,7 +26,7 @@ import DashboardItem from "./DashboardItem.vue";
 
   <div v-else>
     <ul class="dashboard-list">
-      <DashboardItem
+      <DashboardListItem
         v-for="(item, index) in movies?.Search"
         :key="index"
         :item="item"
