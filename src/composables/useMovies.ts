@@ -46,7 +46,7 @@ export const fetchMovie = (imdbID: string) => {
  *
  * @returns {promise}
  */
-export const fetchMovies = () => {
+export const fetchMovies = (nextPage = false) => {
   isMoviesLoading.value = true;
 
   fetch(
@@ -63,9 +63,12 @@ export const fetchMovies = () => {
       isMoviesLoading.value = false;
 
       if (data.Response === "True") {
-        error.value = null;
+        if (!nextPage) {
+          resetData();
+        }
         movies.value = data;
       } else if (data.Response === "False" && data.Error) {
+        resetData();
         error.value = data.Error;
       }
     })
@@ -81,6 +84,6 @@ export const fetchMovies = () => {
  */
 export const resetData = () => {
   error.value = null;
-  movies.value = { Response: "", totalResults: "", Search: [] };
-  searchInput.value = "";
+  movies.value = { Response: "", totalResults: "0", Search: [] };
+  pageIndex.value = 1;
 };

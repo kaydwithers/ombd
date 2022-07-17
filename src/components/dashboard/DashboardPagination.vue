@@ -4,7 +4,11 @@ import { computed } from "vue";
 import { fetchMovies, movies, pageIndex } from "@/composables/useMovies";
 
 const totalPages = computed(() => {
-  return Math.ceil(Number(movies.value?.totalResults) / 10);
+  if (movies.value && movies.value.Search) {
+    return Math.ceil(Number(movies.value.totalResults) / 10);
+  } else {
+    return 0;
+  }
 });
 
 const incrementHandler = (subtract = false) => {
@@ -14,7 +18,7 @@ const incrementHandler = (subtract = false) => {
     pageIndex.value += 1;
   }
 
-  fetchMovies();
+  fetchMovies(true);
 };
 </script>
 

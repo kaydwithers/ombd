@@ -5,6 +5,7 @@ import IconSearch from "@/components/icons/IconSearch.vue";
 import IconX from "@/components/icons/IconX.vue";
 
 const clearInputHandler = () => {
+  searchInput.value = "";
   resetData();
 };
 
