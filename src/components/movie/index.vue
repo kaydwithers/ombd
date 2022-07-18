@@ -16,11 +16,11 @@ import MovieSynopsis from "./MovieSynopsis.vue";
 
     <template v-else>
       <div v-if="movie">
-        <MovieHeader />
+        <MovieHeader :movie="movie" />
 
         <div class="movie__content">
-          <MovieInfo />
-          <MovieSynopsis />
+          <MovieInfo :movie="movie" />
+          <MovieSynopsis :movie="movie" />
         </div>
       </div>
     </template>

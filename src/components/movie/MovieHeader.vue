@@ -1,5 +1,9 @@
 <script setup lang="ts">
-import { movie } from "@/composables/useMovies";
+import type { MovieInterface } from "@/interfaces/movieInterface";
+
+defineProps<{
+  movie: MovieInterface;
+}>();
 </script>
 
 <template>
