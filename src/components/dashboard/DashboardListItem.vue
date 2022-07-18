@@ -59,7 +59,7 @@ button {
     rgba(0, 78, 196, 0.17) 0%,
     rgba(255, 255, 255, 0) 100%
   );
-  box-shadow: inset 4px 1px 0px var(--accent-500);
+  box-shadow: inset 4px 0px 0px var(--accent-500);
 }
 
 .image {

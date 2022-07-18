@@ -40,6 +40,13 @@ import DashboardListItem from "./DashboardListItem.vue";
 </template>
 
 <style scoped>
+.dashboard-list {
+  border-top-color: var(--accent-500);
+  border-top-style: solid;
+  border-top-width: 1px;
+  margin-bottom: 3.25rem;
+}
+
 p {
   padding-left: 2rem;
   padding-right: 2rem;

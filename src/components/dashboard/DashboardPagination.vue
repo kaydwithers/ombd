@@ -39,6 +39,7 @@ const incrementHandler = (subtract = false) => {
 <style scoped>
 .dashboard-pagination {
   align-items: center;
+  box-shadow: 2px 4px 12px 4px rgba(0, 0, 0, 0.05);
   display: flex;
   justify-content: space-between;
   margin-top: auto;
