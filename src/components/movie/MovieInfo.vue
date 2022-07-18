@@ -6,7 +6,7 @@ const props = defineProps<{
 }>();
 
 const getFormattedActors = () => {
-  return props.movie?.Actors.split(",");
+  return props.movie.Actors.split(",");
 };
 </script>
 
