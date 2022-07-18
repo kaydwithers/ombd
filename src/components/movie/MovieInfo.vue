@@ -1,14 +1,8 @@
 <script setup lang="ts">
 import { movie } from "@/composables/useMovies";
 
-import type { MovieInterface } from "@/interfaces/movieInterface";
-
-const props = defineProps<{
-  movie: MovieInterface;
-}>();
-
 const getFormattedActors = () => {
-  return props.movie?.Actors.split(",");
+  return movie?.Actors.split(",");
 };
 </script>
 

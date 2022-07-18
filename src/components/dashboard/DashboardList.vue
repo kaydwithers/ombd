@@ -50,5 +50,6 @@ import DashboardListItem from "./DashboardListItem.vue";
 p {
   padding-left: 2rem;
   padding-right: 2rem;
+  padding-top: 2rem;
 }
 </style>
