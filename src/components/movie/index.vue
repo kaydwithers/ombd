@@ -15,11 +15,13 @@ import MovieSynopsis from "./MovieSynopsis.vue";
     <MovieFallback v-else-if="!isMovieLoading && !movie" />
 
     <template v-else>
-      <MovieHeader :movie="movie" />
+      <div v-if="movie">
+        <MovieHeader :movie="movie" />
 
-      <div class="movie__content">
-        <MovieInfo :movie="movie" />
-        <MovieSynopsis :movie="movie" />
+        <div class="movie__content">
+          <MovieInfo :movie="movie" />
+          <MovieSynopsis :movie="movie" />
+        </div>
       </div>
     </template>
   </div>
