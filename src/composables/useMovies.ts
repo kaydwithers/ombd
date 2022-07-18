@@ -51,7 +51,7 @@ export const fetchMovies = (isFirstRun = false, nextPage = false) => {
 
   let searchParam = "";
   if (isFirstRun) {
-    searchParam = "Top Gun";
+    searchParam = "Top Gun: Maverick";
   } else {
     searchParam = searchInput.value;
   }

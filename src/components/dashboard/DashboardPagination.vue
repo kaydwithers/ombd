@@ -18,7 +18,7 @@ const incrementHandler = (subtract = false) => {
     pageIndex.value += 1;
   }
 
-  fetchMovies(true);
+  fetchMovies(false, true);
 };
 </script>
 
