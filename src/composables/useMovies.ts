@@ -44,22 +44,16 @@ export const fetchMovie = (imdbID: string) => {
 /**
  * Returns a movies API response.
  *
+ * @param {boolean} nextPage - Whether or not a page has been modified.
  * @returns {promise}
  */
-export const fetchMovies = (isFirstRun = false, nextPage = false) => {
+export const fetchMovies = (nextPage = false) => {
   isMoviesLoading.value = true;
 
-  let searchParam = "";
-  if (isFirstRun) {
-    searchParam = "Top Gun: Maverick";
-  } else {
-    searchParam = searchInput.value;
-  }
-
   fetch(
-    `${API_URL}?apikey=${
-      import.meta.env.VITE_API_KEY
-    }&type=movie&s=${searchParam}&page=${pageIndex.value}`
+    `${API_URL}?apikey=${import.meta.env.VITE_API_KEY}&type=movie&s=${
+      searchInput.value
+    }&page=${pageIndex.value}`
   )
     .then((response) => {
       if (response.ok) {
