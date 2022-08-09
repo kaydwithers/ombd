@@ -17,7 +17,8 @@ import DashboardPagination from "./DashboardPagination.vue";
   box-shadow: 2px 4px 12px 4px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  height: 100vh;
+  overflow: scroll;
   width: 100%;
 }
 
