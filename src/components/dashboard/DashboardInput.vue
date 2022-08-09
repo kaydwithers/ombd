@@ -1,8 +1,12 @@
 <script setup lang="ts">
+import { ref } from "vue";
+
 import { resetData, fetchMovies, searchInput } from "@/composables/useMovies";
 
 import IconSearch from "@/components/icons/IconSearch.vue";
 import IconX from "@/components/icons/IconX.vue";
+
+const isThrottling = ref(false);
 
 const clearInputHandler = () => {
   searchInput.value = "";
@@ -10,7 +14,17 @@ const clearInputHandler = () => {
 };
 
 const inputHandler = () => {
-  fetchMovies();
+  if (isThrottling.value) {
+    return;
+  }
+
+  isThrottling.value = true;
+
+  setTimeout(() => {
+    isThrottling.value = false;
+
+    fetchMovies();
+  }, 2000);
 };
 </script>
 
