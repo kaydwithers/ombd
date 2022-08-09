@@ -14,6 +14,8 @@ export const movies = ref<MoviesInterface>();
 export const pageIndex = ref(1);
 export const searchInput = ref("");
 
+const isThrottling = ref(false);
+
 /**
  * Returns a movie API response.
  *
@@ -44,40 +46,53 @@ export const fetchMovie = (imdbID: string) => {
 /**
  * Returns a movies API response.
  *
- * @param {boolean} nextPage - Whether or not a page has been modified.
+ * @param {boolean} isNextPage - Whether or not a page has been modified.
  * @returns {promise}
  */
-export const fetchMovies = (nextPage = false) => {
+export const fetchMovies = (isNextPage = false) => {
   isMoviesLoading.value = true;
 
-  fetch(
-    `${API_URL}?apikey=${import.meta.env.VITE_API_KEY}&type=movie&s=${
-      searchInput.value
-    }&page=${pageIndex.value}`
-  )
-    .then((response) => {
-      if (response.ok) {
-        return response.json();
-      }
-    })
-    .then((data) => {
-      isMoviesLoading.value = false;
+  if (isThrottling.value) {
+    return;
+  }
 
-      if (data.Response === "True") {
-        if (!nextPage) {
-          resetData();
-        }
-        movies.value = data;
-      } else if (data.Response === "False" && data.Error) {
-        resetData();
-        error.value = data.Error;
-      }
-    })
-    .catch((error) => {
-      console.error(`Failed fetchMovies(): ${error}`);
-      isMoviesLoading.value = false;
-      error.value = error;
-    });
+  isThrottling.value = true;
+
+  setTimeout(
+    () => {
+      isThrottling.value = false;
+
+      fetch(
+        `${API_URL}?apikey=${import.meta.env.VITE_API_KEY}&type=movie&s=${
+          searchInput.value
+        }&page=${pageIndex.value}`
+      )
+        .then((response) => {
+          if (response.ok) {
+            return response.json();
+          }
+        })
+        .then((data) => {
+          isMoviesLoading.value = false;
+
+          if (data.Response === "True") {
+            if (!isNextPage) {
+              resetData();
+            }
+            movies.value = data;
+          } else if (data.Response === "False" && data.Error) {
+            resetData();
+            error.value = data.Error;
+          }
+        })
+        .catch((error) => {
+          console.error(`Failed fetchMovies(): ${error}`);
+          isMoviesLoading.value = false;
+          error.value = error;
+        });
+    },
+    isNextPage ? 0 : 600
+  );
 };
 
 /**
