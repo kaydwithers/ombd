@@ -28,6 +28,7 @@ import MovieSynopsis from "./MovieSynopsis.vue";
 <style scoped>
 .movie {
   display: none;
+  margin-left: 20rem;
 }
 
 .movie__content {

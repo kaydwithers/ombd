@@ -14,11 +14,13 @@ import DashboardPagination from "./DashboardPagination.vue";
 
 <style scoped>
 .dashboard {
+  background-color: white;
   box-shadow: 2px 4px 12px 4px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  overflow: scroll;
+  height: 100%;
+  overflow-y: scroll;
+  position: fixed;
   width: 100%;
 }
 
