@@ -24,7 +24,7 @@ const inputHandler = () => {
     isThrottling.value = false;
 
     fetchMovies();
-  }, 2000);
+  }, 600);
 };
 </script>
 
