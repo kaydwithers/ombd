@@ -11,8 +11,8 @@ const totalPages = computed(() => {
   }
 });
 
-const handleIncrement = (subtract = false) => {
-  if (subtract) {
+const handleIncrement = (isDecrement = false) => {
+  if (isDecrement) {
     pageIndex.value -= 1;
   } else {
     pageIndex.value += 1;
