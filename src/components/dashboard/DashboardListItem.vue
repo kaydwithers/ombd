@@ -7,7 +7,7 @@ defineProps<{
   item: MovieInterface;
 }>();
 
-const clickHandler = (imdbID: string) => {
+const handleClick = (imdbID: string) => {
   fetchMovie(imdbID);
 };
 </script>
@@ -17,7 +17,7 @@ const clickHandler = (imdbID: string) => {
     class="dashboard-list-item"
     :class="{ 'is-active': item.imdbID === movie?.imdbID }"
   >
-    <button @click="clickHandler(item.imdbID)">
+    <button @click="handleClick(item.imdbID)">
       <div class="image">
         <img
           :src="item.Poster"

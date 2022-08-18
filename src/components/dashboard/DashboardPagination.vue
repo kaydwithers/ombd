@@ -11,7 +11,7 @@ const totalPages = computed(() => {
   }
 });
 
-const incrementHandler = (subtract = false) => {
+const handleIncrement = (subtract = false) => {
   if (subtract) {
     pageIndex.value -= 1;
   } else {
@@ -24,13 +24,11 @@ const incrementHandler = (subtract = false) => {
 
 <template>
   <div v-if="totalPages > 1" class="dashboard-pagination">
-    <button :disabled="pageIndex <= 1" @click="incrementHandler(true)">
-      ◂
-    </button>
+    <button :disabled="pageIndex <= 1" @click="handleIncrement(true)">◂</button>
 
     <p>Page {{ pageIndex }}/{{ totalPages }}</p>
 
-    <button :disabled="pageIndex === totalPages" @click="incrementHandler()">
+    <button :disabled="pageIndex === totalPages" @click="handleIncrement()">
       ▸
     </button>
   </div>

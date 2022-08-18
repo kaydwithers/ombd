@@ -8,12 +8,12 @@ import IconX from "@/components/icons/IconX.vue";
 
 const isThrottling = ref(false);
 
-const clearInputHandler = () => {
+const handleClearInput = () => {
   searchInput.value = "";
   resetData();
 };
 
-const inputHandler = () => {
+const handleInput = () => {
   if (isThrottling.value) {
     return;
   }
@@ -38,11 +38,11 @@ const inputHandler = () => {
         name="search"
         placeholder="Search here"
         type="text"
-        @input="inputHandler"
+        @input="handleInput"
       />
 
       <div class="icon">
-        <button v-if="searchInput" @click="clearInputHandler">
+        <button v-if="searchInput" @click="handleClearInput">
           <IconX aria-hidden="true" />
         </button>
 
