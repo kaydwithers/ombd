@@ -14,9 +14,7 @@ const handleClearInput = () => {
 };
 
 const handleInput = () => {
-  if (isThrottling.value) {
-    return;
-  }
+  if (isThrottling.value) return;
 
   isThrottling.value = true;
 
