@@ -1,9 +1,11 @@
 import { expect, test } from "vitest";
 import { mount } from "@vue/test-utils";
 
-import { error, movies, pageIndex, searchInput } from "@/composables/useMovies";
+import { useMovies } from "@/composables/useMovies";
 
 import DashboardInput from "../dashboard/DashboardInput.vue";
+
+const { error, movies, pageIndex, searchInput } = useMovies();
 
 test("X button click resets data.", async () => {
   expect(DashboardInput).toBeTruthy();

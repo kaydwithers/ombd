@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { computed } from "vue";
 
-import { fetchMovies, movies, pageIndex } from "@/composables/useMovies";
+import { useMovies } from "@/composables/useMovies";
+
+const { fetchMovies, movies, pageIndex } = useMovies();
 
 const totalPages = computed(() => {
   if (movies.value && movies.value.Search) {

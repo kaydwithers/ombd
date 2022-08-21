@@ -1,11 +1,13 @@
 <script setup lang="ts">
-import { movie, isMovieLoading } from "@/composables/useMovies";
+import { useMovies } from "@/composables/useMovies";
 
 import MovieFallback from "./MovieFallback.vue";
 import MovieHeader from "./MovieHeader.vue";
 import MovieInfo from "./MovieInfo.vue";
 import MovieLoading from "./MovieLoading.vue";
 import MovieSynopsis from "./MovieSynopsis.vue";
+
+const { movie, isMovieLoading } = useMovies();
 </script>
 
 <template>

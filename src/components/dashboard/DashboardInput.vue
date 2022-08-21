@@ -1,10 +1,12 @@
 <script setup lang="ts">
 import { ref } from "vue";
 
-import { resetData, fetchMovies, searchInput } from "@/composables/useMovies";
+import { useMovies } from "@/composables/useMovies";
 
 import IconSearch from "@/components/icons/IconSearch.vue";
 import IconX from "@/components/icons/IconX.vue";
+
+const { fetchMovies, resetData, searchInput } = useMovies();
 
 const isThrottling = ref(false);
 

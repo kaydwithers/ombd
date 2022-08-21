@@ -1,12 +1,9 @@
 <script setup lang="ts">
-import {
-  error,
-  isMoviesLoading,
-  movies,
-  searchInput,
-} from "@/composables/useMovies";
+import { useMovies } from "@/composables/useMovies";
 
 import DashboardListItem from "./DashboardListItem.vue";
+
+const { error, isMoviesLoading, movies, searchInput } = useMovies();
 </script>
 
 <template>

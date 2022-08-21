@@ -1,7 +1,9 @@
 <script setup lang="ts">
-import { fetchMovie, movie } from "@/composables/useMovies";
+import { useMovies } from "@/composables/useMovies";
 
 import type { MovieInterface } from "@/interfaces/movieInterface";
+
+const { fetchMovie, movie } = useMovies();
 
 defineProps<{
   item: MovieInterface;
