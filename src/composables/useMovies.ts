@@ -81,9 +81,6 @@ export function useMovies() {
       });
   };
 
-  /**
-   * Resets the data.
-   */
   const resetData = () => {
     error.value = null;
     movies.value = { Response: "", totalResults: "0", Search: [] };
